@@ -1,0 +1,20 @@
+CREATE DATABASE IF NOT EXISTS db_alumnos
+    CHARACTER SET utf8mb4
+    COLLATE utf8mb4_spanish_ci;
+
+USE db_alumnos;
+
+CREATE TABLE IF NOT EXISTS alumnos (
+    id_alumno         INT           PRIMARY KEY AUTO_INCREMENT,
+    nombres           VARCHAR(100)  NOT NULL,
+    apellidos         VARCHAR(100)  NOT NULL,
+    carnet            VARCHAR(20)   NOT NULL UNIQUE,
+    carrera           VARCHAR(100)  NOT NULL,
+    fecha_inscripcion DATE          NOT NULL
+);
+
+-- Datos de prueba
+INSERT INTO alumnos (nombres, apellidos, carnet, carrera, fecha_inscripcion) VALUES
+    ('Ana María',   'Rodríguez López',  '2024-001', 'Ingeniería en Sistemas',     '2024-01-15'),
+    ('Carlos José', 'Martínez Pérez',   '2024-002', 'Administración de Empresas', '2024-01-15'),
+    ('Gabriela',    'Hernández Ramos',  '2024-003', 'Contaduría Pública',         '2024-02-01');
